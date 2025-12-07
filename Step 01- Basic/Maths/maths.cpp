@@ -85,12 +85,12 @@ int printAllDivisor(int n)
 int primeNumber(int n)
 {
     int count = 0;
-    for (int i = 1; i * i < n; i++)
+    for (int i = 1; i * i <= n; i++)
     {
         if (n % i == 0)
         {
             count++;
-            if ((n / i) != i) // check for n = 1
+            if ((n / i) != i) 
                 count++;
         }
     }
