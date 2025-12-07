@@ -90,7 +90,7 @@ int primeNumber(int n)
         if (n % i == 0)
         {
             count++;
-            if ((n / i) != i)
+            if ((n / i) != i) // check for n = 1
                 count++;
         }
     }
