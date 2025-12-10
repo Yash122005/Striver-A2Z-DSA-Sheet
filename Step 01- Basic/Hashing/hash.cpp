@@ -72,16 +72,16 @@ int main()
     }
     // precompute
 
-     unordered_map<int,int> mpp;
+     unordered_map<int,int> mpp;       // <number frequency>
     for(int i=0; i<n;i++){
-        mpp[arr[i]]++;
+        mpp[arr[i]]++;   
     }
 
     // for how it store in sorted order
-    for(auto it: mpp){
-        cout<<it.first<<" ->"<<it.second<<endl;
-    }
-
+    for(auto it: mpp){                              // 1 2 3 3 1 2 12
+        cout<<it.first<<" ->"<<it.second<<endl;     // 1 -> 2   2 ->2 3 ->2   12 ->0
+    }                                               //unordered-map
+                                                    //time complexity -  images
     int q;
     cin>>q;
     while(q--){
