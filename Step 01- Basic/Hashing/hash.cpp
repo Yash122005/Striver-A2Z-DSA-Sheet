@@ -30,9 +30,9 @@ int main()
     // {
     //     hash[arr[i]] += 1;
     // }
-    // int target;
-    // cin >> target;
-    // while (target--)
+    // int q;               //no. of digits whose frequency you wants to know
+    // cin >> q;
+    // while (q--)
     // {
     //     int number;
     //     cin >> number;
@@ -55,10 +55,10 @@ int main()
     // int q;
     // cin>>q;
     // while(q--){
-    //     char c;
+        // char c;         // c-> target characters
     //     cin>>c;
     //     // fetch
-    //     cout<<hash[c-'A']<<endl;
+    //     cout<<hash[c-'a']<<endl;
     // }
 
 
