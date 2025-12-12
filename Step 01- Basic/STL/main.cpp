@@ -25,7 +25,7 @@ void explainPair()
     pair<int, int> arr[] = {{1, 2}, {3, 4}, {5, 6}};
     cout << arr[1].first << " " << arr[1].second;
 }
-
+----------------------------------------------------------------------------------------------------------------------------------
 void explainVector()
 {
     vector<int> v;
@@ -33,7 +33,16 @@ void explainVector()
     // added element to vector
     v.push_back(1);
     v.emplace_back(2);
+    
+//     //| Feature                       | `push_back`  | `emplace_back`              |
+// | ----------------------------- | ------------ | --------------------------- |
+// | Creates temporary object?     | ✔️ Yes       | ❌ No                        |
+// | Performance                   | Slower       | Faster                      |
+// | Direct construction in vector | ❌ No         | ✔️ Yes                      |
+// | Best for complex objects      | ❌ Not ideal  | ✔️ Best choice              |
+// | Syntax                        | needs object | takes constructor arguments |
 
+-------------------------------------------------------------------------------------------------------------------------------
     // define vector of pair dataType
     vector<pair<int, int>> vec;
 
@@ -42,11 +51,57 @@ void explainVector()
 
     vector<int> vecc(5, 100);
     vector<int> v(5);
+// complete testing code for the above code
 
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// void explainVector()
+// {
+//     vector<pair<int, int>> vec;
+
+//     vec.push_back({1, 8});   // creates a temporary pair
+//     vec.emplace_back(1, 2);  // constructs pair directly
+
+//     // printing vector
+//     for (auto x : vec) {
+//         cout << x.first << " " << x.second << endl;
+//     }
+
+//     cout << "Size: " << vec.size();
+// }
+
+// int main() {
+//     explainVector();
+//     return 0;
+// }
+
+---------------------------------------------------------------------------------------------------------------
     vector<int> v1(5, 20);
+// #include <bits/stdc++.h>                       //output ----
+// using namespace std;                             20 20
+// void explainVector()                             20
+// {vector<int> v1(5, 20);                          20 20 20 20 20 
+
+//     cout << v1[0] <<" "<<v1.at(0)<<endl;
+//     cout << v1.back()<<endl;
+//     for(int x : v1){
+//         cout<<x <<" ";
+//     }
+// }
+
+// int main() {
+//     explainVector();
+//     return 0;
+// }
+
+
+------------------------------------------------------------------------------------------------------------
+
+
     // vector<int>v2(v1); //copied of v1
 
-    // how to access elements in vector
+    // how to access elements in a vector
 
     // by normal method
 
@@ -54,6 +109,7 @@ void explainVector()
     cout << vecc.back() << " ";
 
     // by iterator
+------------------------------------------------------------------------------------------------------------------
 
     vector<int>::iterator it = v.begin();
     it++;
@@ -84,7 +140,7 @@ void explainVector()
     {
         cout << it << " ";
     }
-
+---------------------------------------------------------------------------------------------------------------
     // * Deletion of vector
     // 10,20,30,40
     v.erase(v.begin() + 1); // 10,30,40
@@ -120,6 +176,49 @@ void explainVector()
     // if one element - false
     // if nothing - true
 }
+-----------------------------------
+
+    //complete example 
+    #include <bits/stdc++.h>           //output -- 
+using namespace std;                    Vector: 10 20 
+int main() {                            Size: 2
+    vector<int> v;                      Capacity: 2
+                                        After insertion: 5 10 100 100 20 
+    v.push_back(10);                    After erase: 5 100 100 20 
+    v.emplace_back(20);                 After pop_back: 5 100 100 
+                                        Is empty? Yes
+    cout << "Vector: ";
+    for(auto x : v) cout << x << " ";
+    cout << endl;
+
+    cout << "Size: " << v.size() << endl;
+    cout << "Capacity: " << v.capacity() << endl;
+
+    v.insert(v.begin(), 5);
+    v.insert(v.begin() + 2, 2, 100);
+
+    cout << "After insertion: ";
+    for(auto x : v) cout << x << " ";
+    cout << endl;
+
+    v.erase(v.begin() + 1);
+
+    cout << "After erase: ";
+    for(auto x : v) cout << x << " ";
+    cout << endl;
+
+    v.pop_back();
+
+    cout << "After pop_back: ";
+    for(auto x : v) cout << x << " ";
+    cout << endl;
+
+    v.clear();
+
+    cout << "Is empty? " << (v.empty() ? "Yes" : "No");
+}
+---------------------------------------------------------------------------------------
+
 
 void explainList()
 {
