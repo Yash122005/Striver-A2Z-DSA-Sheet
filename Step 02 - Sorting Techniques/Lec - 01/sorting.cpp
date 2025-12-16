@@ -43,7 +43,7 @@ void bubble_sort(int arr[], int n){
 // insertion sort
 
 void insertion_sort(int arr[], int n){            //time complexity ---
-    for(int i=0; i<=n-1;i++){                     //O(n^2) - worst
+    for(int i=0; i<=n-1;i++){                     //O(n^2) - worst   O(n) - n best in the case of sorted array
         int j = i;
         while (j>0 && arr[j-1]>arr[j])
         {
