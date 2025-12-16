@@ -9,7 +9,7 @@ void selection_sort(int arr[], int n)
     {
         int min = i;                            //initially min is the first one of the unsorted subarray
         for (int j = i; j <= n - 1; j++)        //time complexity --- 
-        {                                       //
+        {                                       //O(n^2) best/worst/average
             if (arr[j] < arr[min])
             {
                 min = j;
@@ -25,8 +25,8 @@ void selection_sort(int arr[], int n)
 // bubble sort 
 
 void bubble_sort(int arr[], int n){
-    for(int i=n-1; i>=0; i--){
-        int did_Swap = 0;
+    for(int i=n-1; i>=0; i--){                //time complexity --- 
+        int did_Swap = 0;                    //O(n^2) worst   O(n) - n best in the case of sorted array
         for(int j = 0; j<=i-1; j++){
             if(arr[j]>arr[j+1]){
                     int temp = arr[j+1];
@@ -42,8 +42,8 @@ void bubble_sort(int arr[], int n){
 
 // insertion sort
 
-void insertion_sort(int arr[], int n){
-    for(int i=0; i<=n-1;i++){
+void insertion_sort(int arr[], int n){            //time complexity ---
+    for(int i=0; i<=n-1;i++){                     //O(n^2) - worst
         int j = i;
         while (j>0 && arr[j-1]>arr[j])
         {
