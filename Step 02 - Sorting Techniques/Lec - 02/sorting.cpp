@@ -1,7 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//  Merge Sort
+// //  Merge Sort  -  Divide and merge
+// ex- [3,1,2,4,1,5,2,6,4] --
+//     [3,1,2,4,1]             [5,2,6,4]
+//     [3,1,2]   [4,1]
+//     [3,1]  [2]
+//     [3] [1]
 
 void merge(vector<int> &arr, int low, int mid, int high)
 {
